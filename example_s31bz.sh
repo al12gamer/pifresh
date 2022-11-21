@@ -1,7 +1,8 @@
 ## Example Raspberry Pi setup script by Alex Seibs
 ## This script assumes you have a fresh Raspberry Pi OS Lite install on your Pi 4 or newer
 #!/bin/sh
-sudo apt update -y && sudo apt full-upgrade -y && sudo dpkg --configure -a && sudo apt autoremove -y
+sudo apt update -y && sudo dpkg --configure -a && sudo apt full-upgrade -y && sudo apt autoremove -y
+sudo apt install linux-modules-extra-raspi
 curl -sfL https://get.k3s.io | sh -
 k3s kubectl get node
 ## adding cd in the case that the k3s script has an error and changes directory
